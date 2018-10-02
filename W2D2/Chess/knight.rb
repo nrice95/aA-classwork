@@ -6,6 +6,7 @@ class Knight < Piece
   end
 
   def symbol
+    :N
   end
 
   protected

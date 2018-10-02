@@ -4,7 +4,8 @@ class Board
   attr_accessor :grid
 
   def initialize
-    @grid = Array.new(8){Array.new(8)}
+    @null_piece = NullPiece.instance
+    @grid = Array.new(8){Array.new(8 , @null_piece)}
     place_pieces(:top)
   end
 
@@ -26,6 +27,9 @@ class Board
   end
 
   def valid_pos?(pos)
+    pos.none?{|el| el>7 || el<0}
+
+
   end
 
   def add_piece(piece,pos)
@@ -87,13 +91,6 @@ private
 
       place_mains(:black, 0)
       place_pawns(:black, 1)
-    end
-
-    (2..5).each do |row_i|
-      (0..7).each do |col_j|
-        pos = [row_i,col_j]
-        self[pos] = NullPiece
-      end
     end
   end
 

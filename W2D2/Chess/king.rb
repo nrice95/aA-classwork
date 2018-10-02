@@ -6,6 +6,7 @@ class King < Piece
   end
 
   def symbol
+    :K
   end
 
   protected
