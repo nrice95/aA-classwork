@@ -1,6 +1,8 @@
 require_relative "piece"
+require_relative "stepable"
 
 class Knight < Piece
+  include Stepable
   def initialize(color, board, pos)
     super
   end
@@ -12,6 +14,9 @@ class Knight < Piece
   protected
 
   def move_dirs
+    knight_dirs
   end
+
+
 
 end

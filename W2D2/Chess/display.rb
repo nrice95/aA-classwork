@@ -16,20 +16,27 @@ class Display
     self.board.grid.each_with_index do |row, i|
       row.each_with_index do |piece, j|
         if [i,j] == pos
-          print "#{piece.symbol} ".red
+          print "#{piece.symbol} ".green
         else
-          print "#{piece.symbol} "
+          print add_color(piece)
         end
       end
       puts
     end
   end
-
+  def add_color(piece)
+    case piece.color
+    when :black, :none
+      "#{piece.symbol} ".black
+    when :white
+      "#{piece.symbol} ".magenta
+    end
+  end
 end
 
-d = Display.new(Board.new)
-10.times do
-  d.render
-  d.cursor.get_input
-
-end
+# d = Display.new(Board.new)
+# 10.times do
+#   d.render
+#   d.cursor.get_input
+#
+# end
