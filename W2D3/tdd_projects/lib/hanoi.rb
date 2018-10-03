@@ -58,5 +58,9 @@ class Hanoi
     true
   end
 
+  def won?
+    @towers.any? { |tower| tower.length == 3 }
+  end
+
 
 end
