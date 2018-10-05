@@ -17,6 +17,7 @@ class Node
   def remove
     self.prev.next = self.next
     self.next.prev = self.prev
+    self
   end
 end
 

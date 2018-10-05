@@ -4,7 +4,7 @@ require_relative 'p04_linked_list'
 class LRUCache
   attr_reader :count, :map, :store, :max, :prc
   def initialize(max, prc)
-    @map = HashMap.new
+    @map = HashMap.new(max)
     @store = LinkedList.new
     @max = max
     @prc = prc
@@ -15,13 +15,13 @@ class LRUCache
   end
 
   def get(key)
-    #case 1 => key already included
-    index = key.hash % self.max
-    node = self.map[index]
-    if !node.nil?
-      update_node!(node)
+    node = self.map.get(key)
+    if !node.nil? #key exists in cache
+      result = update_node!(node)
+      return result
     else
-      calc!(key)
+      result = calc!(key)
+      return result
     end
   end
 
@@ -38,12 +38,14 @@ class LRUCache
     #add newest node to linked list
     new_node = self.store.append(key,val)
 
-    #remove relevant items from hash and LL
-    eject! if self.map.count == max
-
     #add newest pair to hash
     self.map.set(key,new_node)
 
+    #remove relevant items from hash and LL
+    eject! if self.map.count == max + 1
+
+    # puts "!#{new_node.val}!"
+    val
   end
 
   def update_node!(node) # suggested helper method; move a node to the end of the list
@@ -51,16 +53,21 @@ class LRUCache
     #remove da node
     tmp = node.remove
 
-    #re-place da node
-    self.store.append(tmp.key,tmp.val)
+    #re-add the node
+    self.store.tail.prev.next = tmp
+    tmp.prev = self.store.tail.prev
+    tmp.next = self.store.tail
+    self.store.tail.prev = tmp
+    tmp
 
+    tmp.val
   end
 
   def eject!
     #remove from linked list
-    tmp_key = head.next.key
-    head.next.next.prev = head
-    head.next = head.next.next
+    tmp_key = self.store.head.next.key
+    self.store.head.next.next.prev = self.store.head
+    self.store.head.next = self.store.head.next.next
 
     #remove from hash
     self.map.delete(tmp_key)
