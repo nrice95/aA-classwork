@@ -16,11 +16,11 @@ class LRUCache
 
   def get(key)
     node = self.map.get(key)
-    if !node.nil? #key exists in cache
-      result = update_node!(node)
+    if node.nil? #key does not exist in cache
+      result = calc!(key)
       return result
     else
-      result = calc!(key)
+      result = update_node!(node)
       return result
     end
   end
