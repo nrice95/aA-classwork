@@ -65,10 +65,23 @@ VALUES
     (SELECT id FROM users WHERE fname = 'Nathan' AND lname = 'Rice'));
 
 INSERT INTO
+  questions(title, body, author_id)
+VALUES
+  ('Sky color', 'What color is the sky',
+  (SELECT id FROM users WHERE fname = 'Jess' AND lname = 'Li'));
+
+INSERT INTO
   question_follows(user_id, question_id)
 VALUES
-  ((SELECT id FROM users WHERE fname = 'Jess' AND lname = 'Li'),
-    (SELECT id FROM questions WHERE title = 'How do you SQL'));
+
+    ((SELECT id FROM users WHERE fname = 'Jess' AND lname = 'Li'),
+    (SELECT id FROM questions WHERE title = 'How do you SQL')),
+
+    ((SELECT id FROM users WHERE fname = 'Nathan' AND lname = 'Rice'),
+    (SELECT id FROM questions WHERE title = 'How do you SQL')),
+
+    ((SELECT id FROM users WHERE fname = 'Jess' AND lname = 'Li'),
+    (SELECT id FROM questions WHERE title = 'Sky color'));
 
 INSERT INTO
   replies(subject_question_id, parent_reply_id, user_id, body)
@@ -82,4 +95,16 @@ INSERT INTO
   question_likes(question_id, liker_id)
 VALUES
   ((SELECT id FROM questions WHERE title = 'How do you SQL'),
+  (SELECT id FROM users WHERE fname = 'Nathan' AND lname = 'Rice'));
+
+INSERT INTO
+  question_likes(question_id, liker_id)
+VALUES
+  ((SELECT id FROM questions WHERE title = 'How do you SQL'),
+  (SELECT id FROM users WHERE fname = 'Jess' AND lname = 'Li'));
+
+INSERT INTO
+  question_likes(question_id, liker_id)
+VALUES
+  ((SELECT id FROM questions WHERE title = 'Sky color'),
   (SELECT id FROM users WHERE fname = 'Nathan' AND lname = 'Rice'));
