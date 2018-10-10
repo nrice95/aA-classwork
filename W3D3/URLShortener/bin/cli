@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+require "launchy"
+
+print "Give it to me! (Like, your email) "
+email = gets.chomp
+
+user = User.exists?(email: email) ? User.find_by(email: email) : User.create!(email: email)
+
+print "Create or visit shortened URL? "
+option = gets.chomp.downcase
+
+case option
+when "create"
+  print "Give it! (A URL to be shortened, duh) "
+  long_url = gets.chomp
+
+  short_url = ShortenedUrl.create_short_url(user,long_url)
+  puts short_url  
+when "visit"
+  print "Give it! (A short URL to be visited, doy) "
+  short_url = gets.chomp
+  raise "You idiot!" unless ShortenedUrl.exists?(short_url: short_url)
+  short_url_obj = ShortenedUrl.find_by(short_url: short_url)
+  long_url = short_url_obj.long_url
+  Visit.record_visit!(user,short_url_obj)
+  Launchy.open(long_url)
+end
