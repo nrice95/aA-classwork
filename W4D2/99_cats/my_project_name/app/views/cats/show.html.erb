@@ -1,0 +1,44 @@
+<style media="screen">
+html{
+  background-color: teal;
+  text-decoration: underline;
+  color: white;
+}
+
+table {
+  color: black;
+  text-decoration: underline;
+}
+
+</style>
+
+
+
+<h1>This is a Cat</h1>
+<table>
+    <thead>
+        <tr>
+            <th colspan="2"> <%= @cat.name %> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr bgcolor='gold'>
+            <td>Sex</td>
+            <td><%= @cat.sex %></td>
+        </tr>
+
+        <tr bgcolor='lightblue'>
+            <td>Birth Date</td>
+            <td><%= @cat.birth_date%></td>
+        </tr>
+        <tr bgcolor='silver'>
+            <td>Color</td>
+            <td><%= @cat.color%></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2">And that is <%= @cat.name%></td>
+        </tr>
+    </tfoot>
+</table>

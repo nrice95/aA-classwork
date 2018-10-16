@@ -1,0 +1,52 @@
+<h1>Edit Cat (-.^)</h1>
+
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |err| %>
+      <li>
+        <%= err %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="Edit" method="post">
+<input type="hidden" name="_method" value="patch">
+
+  <label for="name">Name: </label>
+    <input id="name" type="text" name="cat[name]" value="<%= @cat.name %>">
+
+    <select name="Colors">
+      <option selected="selected" disabled="disabled">--SELECT COLOR--</option>
+      <% Cat.colors.each do |symbol,str| %>
+        <option value="<%= str %>"><%= symbol %></option>
+      <% end %>
+    </select>
+
+
+    <label for="sex">Sex:
+      <input id="sex" type="radio" name="sex" value="F" checked>Female
+      <input id="sex" type="radio" name="sex" value="M">Male
+    </label>
+
+  <fieldset style="width:160px;">
+
+    <legend>Choose Cat's Birth Date</legend>
+
+    <!-- <div> -->
+        <!-- <label for="start">Start</label> -->
+        <input type="date" id="birth_date" name="birth_date"
+               value=" <%= Date.new %>"
+               min="1995-01-01" max="2018-12-31" />
+    <!-- </div> -->
+  </fieldset>
+
+  Description<br>
+  <textarea style="height:160px; width:190px;">
+
+  </textarea><br>
+
+
+
+  <input type="submit" name="" value="Create Cat">
+</form>
