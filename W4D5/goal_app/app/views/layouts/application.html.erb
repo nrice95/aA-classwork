@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope" rel="stylesheet">
+    <title>GoalApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if flash[:errors] %>
+      <ul>
+        <% flash[:errors].each do |err| %>
+          <li>
+            <%= err %>
+          </li>
+          <% end %>
+      </ul>
+      <% end %>
+
+    <%= yield %>
+  </body>
+  <footer>
+    <% if logged_in? %>
+      <form action="<%= session_url%>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+        <input type="submit" value="Log Out">
+      </form>
+    <% end %>
+  </footer>
+</html>
