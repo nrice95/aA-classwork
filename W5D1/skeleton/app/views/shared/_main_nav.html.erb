@@ -1,5 +1,8 @@
 <header class="main-nav">
-	<nav class="left-nav">
+    <link rel="stylesheet" href="assets/stylesheets/base/layout.scss" type="text/css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <nav class="left-nav">
 		<ul>
 			<li id="sections-sidebar-btn">
 				<i class="fa fa-bars"></i>
@@ -11,4 +14,20 @@
 			</li>
 		</ul>
 	</nav>
+  <nav class="right-nav">
+    <ul>
+      <li>
+        <button type="button" name="button">
+          SUBSCRIBE NOW
+      </button>
+      </li>
+      <li>
+        <button>LOG IN</button>
+      </li>
+      <li id="gear-dropdown-btn">
+        <i class="fas fa-cog"></i>
+        <%= render partial: 'shared/gear_dropdown' %>
+      </li>
+    </ul>
+  </nav>
 </header>

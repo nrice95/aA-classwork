@@ -1,34 +1,51 @@
 .main-nav {
-
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid $light-gray
 }
 
 .left-nav > ul,
 .right-nav > ul {
-
+  display: flex;
+  align-items: center;
 }
 
 .left-nav > ul > li {
-
+  font-family: inherit;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 5px;
 }
 
 .right-nav > ul > li {
-
+  font-family: inherit;
+  font-size: inherit;
+  text-transform: uppercase;
+  margin: 0px 2px;
+  // justify-content: space-between;
 }
 
 .right-nav > ul > li:last-of-type {
+}
 
+#search-modal-btn:hover {
+  cursor: text;
 }
 
 .left-nav > ul > li:hover,
 .right-nav > ul > li:last-of-type:hover {
-
+  background-color: $lightest-gray;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 .left-nav span {
-
+  margin: 10px;
 }
 
 
 .right-nav i {
-
+  margin: 8px;
+  font-size: 20px;
 }
