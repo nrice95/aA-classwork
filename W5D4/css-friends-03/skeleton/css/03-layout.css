@@ -1,0 +1,109 @@
+/* PHASE 3: Layout */
+.content  {
+  display: flex;
+  justify-content: center;
+}
+
+.content-sidebar {
+  animation: animation;
+  animation-duration: 2.4s;
+  animation-iteration-count: infinite;
+
+  background-color: white;
+  width: 250px;
+
+  border: 1px solid lightgrey;
+}
+
+.content-main {
+  animation: animation-right;
+  animation-duration: 100s;
+  animation-iteration-count: infinite;
+
+  background-color: white;
+  width: 650px;
+  border: 1px solid lightgrey;
+}
+
+.content-right {
+  animation: animation-right-right;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+
+  background-color: white;
+  width: 650px;
+  border: 1px solid lightgrey;
+}
+.content-right-right {
+  animation: animation-other;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+
+  background-color: white;
+  width: 650px;
+  border: 1px solid lightgrey;
+}
+.content-fifth {
+  animation: animation-fifth;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+
+  background-color: white;
+  width: 650px;
+  border: 1px solid lightgrey;
+}
+
+@keyframes animation {
+  0% {background-color: blue; height: 25px; width: 20px; margin-top: 50px; border-radius: 50%; border: 10px dotted orange}
+  15% {background-color: indigo; height: 250px; width: 100px;margin-top: 50px; border-radius: 5%; border: 100px dotted yellow}
+  30% {background-color: violet; height: 20px; width: 200px;margin-top: 225px; border-radius: 100%; border: 1px dotted green}
+  45% {background-color: red; height: 80px; width: 2px;margin-top: 45px; border-radius: 25%; border: 30px dotted blue}
+  60% {background-color: orange; height: 605px; width: 240px;margin-top: 15px; border-radius: 0%; border: 60px dotted indigo}
+  75% {background-color: yellow; height: 4000px; width: 160px;margin-top: 130px; border-radius: 15%; border: 20px dotted violet}
+  90% {background-color: green; height: 100px; width: -100px;margin-top: 90px; border-radius: 35%; border: 30px dotted red}
+  100% {background-color: blue; height: 25px; width: 20px;margin-top: 50px; border-radius: 50%; border: 10px dotted orange}
+}
+
+@keyframes animation-other {
+  0% {background-color: blue; height: 50px; width: 20px; margin-top: 50px; border-radius: 0%; border: 100px dashed red}
+  15% {background-color: indigo; height: 500px; width: 100px;margin-top: 500px; border-radius: 25%; border: 1px dashed orange}
+  30% {background-color: violet; height: 250px; width: 200px;margin-top: 25px; border-radius: 15%; border: 20px dashed yellow}
+  45% {background-color: red; height: 850px; width: 2px;margin-top: 75px; border-radius: 50%; border: 70px dashed green}
+  60% {background-color: orange; height: 65px; width: 240px;margin-top: 125px; border-radius: 12%; border: 40px dashed blue}
+  75% {background-color: yellow; height: 400px; width: 160px;margin-top: 130px; border-radius: 45%; border: 60px dashed indigo}
+  90% {background-color: green; height: 1000px; width: -100px;margin-top: 40px; border-radius: 30%; border: 25px dashed violet}
+  100% {background-color: blue; height: 50px; width: 20px;margin-top: 50px; border-radius: 0%; border: 100px dashed red}
+}
+
+@keyframes animation-fifth {
+  0% {background-color: blue; height: 10px; width: 50px; margin-top: 20px; border-radius: 10%; border: 1px groove violet}
+  15% {background-color: indigo; height: 500px; width: 150px;margin-top: 50px; border-radius: 39%; border: 100px groove red}
+  30% {background-color: violet; height: 25px; width: 220px;margin-top: 250px; border-radius: 75%; border: 1px groove orange}
+  45% {background-color: red; height: 85px; width: 20px;margin-top: 750px; border-radius: 28%; border: 100px groove yellow}
+  60% {background-color: orange; height: 650px; width: 24px;margin-top: 150px; border-radius: 19%; border: 10px groove green}
+  75% {background-color: yellow; height: 47px; width: 1600px;margin-top: 13px; border-radius: 25%; border: 100px groove blue}
+  90% {background-color: green; height: 100px; width: 100px;margin-top: 400px; border-radius: 37%; border: 1px groove indigo}
+  100% {background-color: blue; height: 10px; width: 50px;margin-top: 20px; border-radius: 10%; border: 1px groove violet}
+}
+
+@keyframes animation-right {
+  0% {background-color: blue; height: 30px; width: 100px;margin-top: 4px; border-radius: 20%; border: 30px ridge green}
+  15% {background-color: indigo; height: 700px; width: 20px;margin-top: 50px; border-radius: 0%; border: 10px ridge blue}
+  30% {background-color: violet; height: 200px; width: 500px;margin-top: 90px; border-radius: 50%; border: 100px ridge indigo}
+  45% {background-color: red; height: 1000px; width: 90px;margin-top: 50px; border-radius: 35%; border: 50px ridge violet}
+  60% {background-color: orange; height: 80px; width: 70px;margin-top: 500px; border-radius: 0%; border: 70px ridge red}
+  75% {background-color: yellow; height: 3px; width: 60px;margin-top: 150px; border-radius: 25%; border: 20px ridge orange}
+  90% {background-color: green; height: 200px; width: -10px;margin-top: 250px; border-radius: 50%; border: 150px ridge yellow}
+  100% {background-color: blue; height: 30px; width: 100px;margin-top: 4px; border-radius: 20%; border: 30px ridge green}
+}
+
+@keyframes animation-right-right {
+  0% {background-color: blue; height: 60px; width: 150px;margin-top: 30px; border-radius: 40%; border: 15px outset yellow}
+  15% {background-color: indigo; height: 400px; width: 10px;margin-top: 500px; border-radius: 35%; border: 10px outset green}
+  30% {background-color: violet; height: 100px; width: 50px;margin-top: 350px; border-radius: 25%; border: 1px outset blue}
+  45% {background-color: red; height: 1200px; width: 900px;margin-top: 250px; border-radius: 20%; border: 10px outset indigo}
+  60% {background-color: orange; height: 90px; width: 40px;margin-top: 150px; border-radius: 30%; border: 100px outset violet}
+  75% {background-color: yellow; height: 15px; width: 60px;margin-top: 10px; border-radius: 40%; border: 10px outset red}
+  90% {background-color: green; height: 270px; width: -10px;margin-top: 5px; border-radius: 50%; border: 1px outset orange}
+  100% {background-color: blue; height: 60px; width: 150px;margin-top: 30px; border-radius: 40%; border: 15px outset yellow}
+}
