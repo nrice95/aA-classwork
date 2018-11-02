@@ -1,0 +1,39 @@
+
+.tab {
+  background-color: purple;
+  padding: 10px;
+  width: 1000px;
+  border-right: 2px solid magenta;
+  margin: 0;
+  border-radius: 10px 10px 0px 0px;
+  border: 2px solid magenta;
+}
+
+.selected {
+  font-weight: bolder;
+  border-bottom: none;
+}
+
+.tab:last-child{
+  border-right: none;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  color: white;
+  padding: 0px;
+  width: 370px;
+}
+
+.content {
+  background-color: purple;
+  color: white;
+  width: 350px;
+  height: 350px;
+  padding: 10px;
+  border-width: 0px 3px 3px 3px;
+  border-style: solid;
+  border-color: magenta;
+}
